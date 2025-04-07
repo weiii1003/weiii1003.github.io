@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>建立新帳號</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="ball"></div>
+    <div class="container">
+        <form class="form-container">
+            <div class="title">建立新帳號</div>
+            
+            <div class="form-group username">
+                <label>使用者名稱</label>
+                <input type="text" placeholder="請輸入使用者名稱">
+            </div>
+            
+            <div class="form-group email">
+                <label>電子郵件</label>
+                <input type="email" placeholder="your@email.com">
+            </div>
+            
+            <div class="form-group">
+                <label>密碼</label>
+                <input type="text" id="password" placeholder="請輸入密碼" oninput="togglePassword()">
+            </div>
+            
+            <div class="form-group">
+                <label>確認密碼</label>
+                <input type="text" id="confirm-password" placeholder="請再次輸入密碼" oninput="toggleConfirmPassword()">
+            </div>
+            
+            <div class="form-group birthday-group">
+                <label>生日</label>
+                <div class="birthday-select">
+                    <select name="year">
+                        <option>年</option>
+                    </select>
+                    <select name="month">
+                        <option>月</option>
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                        <option>04</option>
+                        <option>05</option>
+                        <option>06</option>
+                        <option>07</option>
+                        <option>08</option>
+                        <option>09</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                    </select>
+                    <select name="day">
+                        <option>日</option>
+                    </select>
+                </div>
+            </div>
+            
+            <fieldset class="gender-group">
+                <legend>性別</legend>
+                <label><input type="radio" name="gender" value="male"> 男</label>
+                <label><input type="radio" name="gender" value="female"> 女</label>
+                <label><input type="radio" name="gender" value="other"> 其他</label>
+            </fieldset>
+            
+            <fieldset class="interest-group">
+                <legend class="legend-interest">興趣科目</legend>
+                <label><input type="checkbox" name="interest" value="programming"> 國文</label>
+                <label><input type="checkbox" name="interest" value="web"> 英文</label>
+                <label><input type="checkbox" name="interest" value="ai"> 數學</label>
+                <label><input type="checkbox" name="interest" value="data"> 自然</label>
+                <label><input type="checkbox" name="interest" value="data"> 社會</label>
+            </fieldset>
+            
+            <div class="form-group full-width">
+                <label>自我介紹</label>
+                <textarea placeholder="請簡單介紹自己..."></textarea>
+            </div>
+            
+            <button type="submit">建立帳號</button>
+        </form>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const yearSelect = document.querySelector('select[name="year"]');
+        const monthSelect = document.querySelector('select[name="month"]');
+        const daySelect = document.querySelector('select[name="day"]');
+
+        const currentYear = new Date().getFullYear();
+        for (let y = currentYear; y >= 1960; y--) {
+            const option = document.createElement('option');
+            option.value = y;
+            option.textContent = y;
+            yearSelect.appendChild(option);
+        }
+
+        function updateDays() {
+            const year = parseInt(yearSelect.value);
+            const month = parseInt(monthSelect.value);
+            if (!year || !month) return;
+
+            const daysInMonth = new Date(year, month, 0).getDate();
+            daySelect.innerHTML = '<option>日</option>'; 
+            for (let d = 1; d <= daysInMonth; d++) {
+                const option = document.createElement('option');
+                option.value = d;
+                option.textContent = String(d).padStart(2, '0');
+                daySelect.appendChild(option);
+            }
+        }
+
+        yearSelect.addEventListener('change', updateDays);
+        monthSelect.addEventListener('change', updateDays);
+    });
+
+    function togglePassword() {
+        const passwordField = document.getElementById('password');
+        if (passwordField.value.length > 0) {
+            passwordField.type = 'password'; 
+        } else {
+            passwordField.type = 'text';
+        }
+    }
+
+    function toggleConfirmPassword() {
+        const confirmPasswordField = document.getElementById('confirm-password');
+        if (confirmPasswordField.value.length > 0) {
+            confirmPasswordField.type = 'password'; 
+        } else {
+            confirmPasswordField.type = 'text'; 
+        }
+    }
+    </script>
+</body>
+</html>
