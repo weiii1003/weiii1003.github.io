@@ -1,0 +1,217 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fafafa;
+}
+
+.container {
+  display: flex;
+}
+
+/* 左側導覽列 */
+/* 整個 sidebar 固定住 */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0; /* 或者 -10px 往左推一點點 */
+  width: 230px; /* 可視需求調整寬度 */
+  height: 100vh;
+  background-color: #fff;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px 0; /* 上下 padding */
+  box-sizing: border-box;
+}
+
+/* LOGO */
+.logo {
+  font-family: 'Lobster', cursive; /* 或你自訂的字體 */
+  font-size: 28px;
+  padding: 0 24px;
+  margin-bottom: 32px;
+}
+
+/* 上半部導航 */
+.nav-top {
+  display: flex;
+  flex-direction: column;
+  gap: 26px; /* 上下間距更寬 */
+}
+
+/* 下半部 threads 與更多 */
+.nav-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: auto;
+  padding-bottom: 24px;
+}
+
+/* 所有導航項目間距放大、字體放大 */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 14px; /* icon 與文字之間的距離 */
+  font-size: 20px; /* 放大字體 */
+  font-weight: 500;
+  padding: 12px 28px; /* 左右推一點，讓整體靠左 */
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* 中間內容 */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 230px; /* 根據你 sidebar 的寬度設定 */
+}
+
+/* 限時動態 */
+.stories {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  margin-bottom: 30px;
+}
+
+.story {
+  text-align: center;
+  width: 80px;
+}
+
+.story-avatar-wrapper {
+  width: 66px;
+  height: 66px;
+  padding: 3px;
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  border-radius: 50%;
+  margin: 0 auto 5px;
+}
+
+.story-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+/* 貼文 */
+.post {
+  width: 600px;
+  background-color: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  font-family: sans-serif;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+}
+
+.post-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.post-user-info {
+  font-weight: bold;
+}
+
+.post-menu {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.post-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 12px 6px;
+}
+
+.post-actions img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.save-icon {
+  margin-right: 0;
+}
+
+.post-likes,
+.post-caption,
+.post-comments {
+  padding: 4px 12px;
+}
+
+.post-add-comment {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-top: 1px solid #efefef;
+}
+
+.post-add-comment input {
+  flex: 1;
+  border: none;
+  outline: none;
+}
+
+/* 右側推薦區 */
+.right-sidebar {
+  width: 300px;
+  padding: 50px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.recommend p {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  justify-content: space-between;
+}
+
+.account a {
+  color: #3897f0;
+  text-decoration: none;
+  font-weight: bold;
+}

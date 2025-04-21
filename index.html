@@ -1,139 +1,225 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>建立新帳號</title>
-    <link rel="stylesheet" href="signup.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Instagram Clone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-    <div class="ball"></div>
-    <div class="container">
-        <form class="form-container">
-            <div class="title">建立新帳號</div>
-            
-            <div class="form-group username">
-                <label>使用者名稱</label>
-                <input type="text" placeholder="請輸入使用者名稱">
-            </div>
-            
-            <div class="form-group email">
-                <label>電子郵件</label>
-                <input type="email" placeholder="your@email.com">
-            </div>
-            
-            <div class="form-group">
-                <label>密碼</label>
-                <input type="text" id="password" placeholder="請輸入密碼" oninput="togglePassword()">
-            </div>
-            
-            <div class="form-group">
-                <label>確認密碼</label>
-                <input type="text" id="confirm-password" placeholder="請再次輸入密碼" oninput="toggleConfirmPassword()">
-            </div>
-            
-            <div class="form-group birthday-group">
-                <label>生日</label>
-                <div class="birthday-select">
-                    <select name="year">
-                        <option>年</option>
-                    </select>
-                    <select name="month">
-                        <option>月</option>
-                        <option>01</option>
-                        <option>02</option>
-                        <option>03</option>
-                        <option>04</option>
-                        <option>05</option>
-                        <option>06</option>
-                        <option>07</option>
-                        <option>08</option>
-                        <option>09</option>
-                        <option>10</option>
-                        <option>11</option>
-                        <option>12</option>
-                    </select>
-                    <select name="day">
-                        <option>日</option>
-                    </select>
-                </div>
-            </div>
-            
-            <fieldset class="gender-group">
-                <legend>性別</legend>
-                <label><input type="radio" name="gender" value="male"> 男</label>
-                <label><input type="radio" name="gender" value="female"> 女</label>
-                <label><input type="radio" name="gender" value="other"> 其他</label>
-            </fieldset>
-            
-            <fieldset class="interest-group">
-                <legend class="legend-interest">興趣科目</legend>
-                <label><input type="checkbox" name="interest" value="programming"> 國文</label>
-                <label><input type="checkbox" name="interest" value="web"> 英文</label>
-                <label><input type="checkbox" name="interest" value="ai"> 數學</label>
-                <label><input type="checkbox" name="interest" value="data"> 自然</label>
-                <label><input type="checkbox" name="interest" value="data"> 社會</label>
-            </fieldset>
-            
-            <div class="form-group full-width">
-                <label>自我介紹</label>
-                <textarea placeholder="請簡單介紹自己..."></textarea>
-            </div>
-            
-            <button type="submit">建立帳號</button>
-        </form>
+  <div class="container">
+    <!-- 左側導覽列 -->
+    <div class="sidebar">
+      <div class="sidebar-top">
+        <div class="logo">Instagram</div>
+        <ul class="nav-list">
+          <li class="nav-item active">🏠 首頁</li>
+          <li class="nav-item">🔍 搜尋</li>
+          <li class="nav-item">🧭 探索</li>
+          <li class="nav-item">🎬 短片</li>
+          <li class="nav-item">💬 訊息</li>
+          <li class="nav-item">❤️ 通知</li>
+          <li class="nav-item">➕ 建立</li>
+        </ul>
+      </div>
+      <div class="sidebar-bottom">
+        <div class="nav-item">🧵 Threads</div>
+        <div class="nav-item">☰ 更多</div>
+      </div>
     </div>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const yearSelect = document.querySelector('select[name="year"]');
-        const monthSelect = document.querySelector('select[name="month"]');
-        const daySelect = document.querySelector('select[name="day"]');
+    <!-- 中間內容 -->
+    <main class="main-content">
+      <!-- 限時動態 -->
+      <div class="stories">
+        <!-- 10 則限動 -->
+        <div class="story">
+          <div class="story-avatar-wrapper">
+            <img src="https://picsum.photos/seed/story1/100" class="story-avatar" alt="user1"/>
+          </div>
+          <span>kevin_1029</span>
+        </div>
+        <div class="story">
+          <div class="story-avatar-wrapper">
+            <img src="https://picsum.photos/seed/story2/100" class="story-avatar" alt="user2"/>
+          </div>
+          <span>Doreeeeen</span>
+        </div>
+        <div class="story">
+          <div class="story-avatar-wrapper">
+            <img src="https://picsum.photos/seed/story3/100" class="story-avatar" alt="user3"/>
+          </div>
+          <span>Bobbbbbbb</span>
+        </div>
+        <div class="story">
+          <div class="story-avatar-wrapper">
+            <img src="https://picsum.photos/seed/story4/100" class="story-avatar" alt="user4"/>
+          </div>
+          <span>no_name</span>
+        </div>
+        <div class="story">
+          <div class="story-avatar-wrapper">
+            <img src="https://picsum.photos/seed/story5/100" class="story-avatar" alt="user5"/>
+          </div>
+          <span>kkkkatherine</span>
+        </div>
+        <div class="story">
+          <div class="story-avatar-wrapper">
+            <img src="https://picsum.photos/seed/story6/100" class="story-avatar" alt="user6"/>
+          </div>
+          <span>wikeyyyyy_03</span>
+        </div>
+        <div class="story">
+          <div class="story-avatar-wrapper">
+            <img src="https://picsum.photos/seed/story7/100" class="story-avatar" alt="user7"/>
+          </div>
+          <span>030_vincent</span>
+        </div>
+        <div class="story">
+          <div class="story-avatar-wrapper">
+            <img src="https://picsum.photos/seed/story8/100" class="story-avatar" alt="user8"/>
+          </div>
+          <span>Jacobbocaj</span>
+        </div>
+        <div class="story">
+          <div class="story-avatar-wrapper">
+            <img src="https://picsum.photos/seed/story9/100" class="story-avatar" alt="user9"/>
+          </div>
+          <span>ninethirty_03</span>
+        </div>
+        <div class="story">
+          <div class="story-avatar-wrapper">
+            <img src="https://picsum.photos/seed/story10/100" class="story-avatar" alt="user10"/>
+          </div>
+          <span>idkhtnmn_03</span>
+        </div>
+        <div class="story">
+          <div class="story-avatar-wrapper">
+            <img src="https://picsum.photos/seed/story11/100" class="story-avatar" alt="user11"/>
+          </div>
+          <span>Kodzuken10123</span>
+        </div>
+      </div>
 
-        const currentYear = new Date().getFullYear();
-        for (let y = currentYear; y >= 1960; y--) {
-            const option = document.createElement('option');
-            option.value = y;
-            option.textContent = y;
-            yearSelect.appendChild(option);
-        }
+      <!-- 貼文 -->
+      <div class="post">
+        <div class="post-header">
+          <img src="https://picsum.photos/seed/avatar1/40" class="post-avatar" />
+          <div class="post-user-info">cutie_cat</div>
+          <div class="post-menu">⋯</div>
+        </div>
+        <img src="https://picsum.photos/seed/post1/600/400" class="post-image" alt="post image"/>
+        <div class="post-actions">
+          <div>
+            <img src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png" alt="like"/>
+            <img src="https://cdn-icons-png.flaticon.com/512/1380/1380338.png" alt="comment"/>
+            <img src="https://cdn-icons-png.flaticon.com/512/724/724933.png" alt="share"/>
+          </div>
+          <img src="https://cdn-icons-png.flaticon.com/512/786/786407.png" alt="save" class="save-icon"/>
+        </div>
+        <div class="post-likes">120 個讚</div>
+        <div class="post-caption"><strong>cutie_cat</strong> 超可愛！</div>
+        <div class="post-comments">查看全部 10 則留言</div>
+        <div class="post-add-comment">
+          <input type="text" placeholder="留言..." />
+        </div>
+      </div>
+      <div class="post">
+        <div class="post-header">
+          <img src="https://picsum.photos/seed/avatar2/40" class="post-avatar" />
+          <div class="post-user-info">idkhtnmn_03</div>
+          <div class="post-menu">⋯</div>
+        </div>
+        <img src="https://picsum.photos/seed/post2/600/400" class="post-image" alt="post image"/>
+        <div class="post-actions">
+          <div>
+            <img src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png" alt="like"/>
+            <img src="https://cdn-icons-png.flaticon.com/512/1380/1380338.png" alt="comment"/>
+            <img src="https://cdn-icons-png.flaticon.com/512/724/724933.png" alt="share"/>
+          </div>
+          <img src="https://cdn-icons-png.flaticon.com/512/786/786407.png" alt="save" class="save-icon"/>
+        </div>
+        <div class="post-likes">120 個讚</div>
+        <div class="post-caption"><strong>idkhtnmn_03</strong> ⭐⭐⭐</div>
+        <div class="post-comments">查看全部 10 則留言</div>
+        <div class="post-add-comment">
+          <input type="text" placeholder="留言..." />
+        </div>
+      </div>
+      <div class="post">
+        <div class="post-header">
+          <img src="https://picsum.photos/seed/avatar3/40" class="post-avatar" />
+          <div class="post-user-info">Bobbbbbbb</div>
+          <div class="post-menu">⋯</div>
+        </div>
+        <img src="https://picsum.photos/seed/post3/600/400" class="post-image" alt="post image"/>
+        <div class="post-actions">
+          <div>
+            <img src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png" alt="like"/>
+            <img src="https://cdn-icons-png.flaticon.com/512/1380/1380338.png" alt="comment"/>
+            <img src="https://cdn-icons-png.flaticon.com/512/724/724933.png" alt="share"/>
+          </div>
+          <img src="https://cdn-icons-png.flaticon.com/512/786/786407.png" alt="save" class="save-icon"/>
+        </div>
+        <div class="post-likes">120 個讚</div>
+        <div class="post-caption"><strong>Bobbbbbbb</strong> eyyyyyyyy</div>
+        <div class="post-comments">查看全部 10 則留言</div>
+        <div class="post-add-comment">
+          <input type="text" placeholder="留言..." />
+        </div>
+        <div class="post">
+          <div class="post-header">
+            <img src="https://picsum.photos/seed/avatar4/40" class="post-avatar" />
+            <div class="post-user-info">doreeeeeeen</div>
+            <div class="post-menu">⋯</div>
+          </div>
+          <img src="https://picsum.photos/seed/post4/600/400" class="post-image" alt="post image"/>
+          <div class="post-actions">
+            <div>
+              <img src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png" alt="like"/>
+              <img src="https://cdn-icons-png.flaticon.com/512/1380/1380338.png" alt="comment"/>
+              <img src="https://cdn-icons-png.flaticon.com/512/724/724933.png" alt="share"/>
+            </div>
+            <img src="https://cdn-icons-png.flaticon.com/512/786/786407.png" alt="save" class="save-icon"/>
+          </div>
+          <div class="post-likes">120 個讚</div>
+          <div class="post-caption"><strong>doreeeeeeen</strong> gm</div>
+          <div class="post-comments">查看全部 10 則留言</div>
+          <div class="post-add-comment">
+            <input type="text" placeholder="留言..." />
+          </div>
+      </div>
+    </main>
 
-        function updateDays() {
-            const year = parseInt(yearSelect.value);
-            const month = parseInt(monthSelect.value);
-            if (!year || !month) return;
-
-            const daysInMonth = new Date(year, month, 0).getDate();
-            daySelect.innerHTML = '<option>日</option>'; 
-            for (let d = 1; d <= daysInMonth; d++) {
-                const option = document.createElement('option');
-                option.value = d;
-                option.textContent = String(d).padStart(2, '0');
-                daySelect.appendChild(option);
-            }
-        }
-
-        yearSelect.addEventListener('change', updateDays);
-        monthSelect.addEventListener('change', updateDays);
-    });
-
-    function togglePassword() {
-        const passwordField = document.getElementById('password');
-        if (passwordField.value.length > 0) {
-            passwordField.type = 'password'; 
-        } else {
-            passwordField.type = 'text';
-        }
-    }
-
-    function toggleConfirmPassword() {
-        const confirmPasswordField = document.getElementById('confirm-password');
-        if (confirmPasswordField.value.length > 0) {
-            confirmPasswordField.type = 'password'; 
-        } else {
-            confirmPasswordField.type = 'text'; 
-        }
-    }
-    </script>
+    <!-- 右側推薦區 -->
+    <aside class="right-sidebar">
+      <div class="profile">
+        <img src="https://picsum.photos/seed/profile/40" />
+        <div>
+          <div><strong>h.weiii_1003</strong></div>
+          <small class="text-muted">查看個人檔案</small>
+        </div>
+      </div>
+      <div class="recommend">
+        <p>為你推薦</p>
+        <div class="account">
+          <img src="https://picsum.photos/seed/avatar5/40" class="post-avatar" />
+          <div>gmgagn_09</div>
+          <a href="#">追蹤</a>
+        </div>
+        <div class="account">
+          <img src="https://picsum.photos/seed/avatar6/40" class="post-avatar" />
+          <div>widjfln_0629</div>
+          <a href="#">追蹤</a>
+        </div>
+        <div class="account">
+          <img src="https://picsum.photos/seed/avatar7/40" class="post-avatar" />
+          <div>rickywicky_3456</div>
+          <a href="#">追蹤</a>
+        </div>
+      </div>
+    </aside>
+  </div>
 </body>
 </html>
